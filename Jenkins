@@ -13,7 +13,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Thulasi-AWS/payment-app.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn -Dmaven.test.failure.ignore=true clean install sonar:sonar -Dsonar.host.url='http://172.31.43.92:9000/'"
+                sh "mvn -Dmaven.test.failure.ignore=true clean deploy sonar:sonar -Dsonar.host.url='http://172.31.43.92:9000/'"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
